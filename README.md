@@ -62,4 +62,49 @@ Start the API server:
 uvicorn src.api:app --host 0.0.0.0 --port 8000
 ```
 
+### Example Request
+```json
+POST /predict
 
+{
+  "src_ip": "192.168.1.100",
+  "dst_ip": "192.168.1.1",
+  "src_port": 443,
+  "dst_port": 51515,
+  "protocol": "TCP",
+  "packet_count": 12,
+  "byte_count": 1024,
+  "duration": 3.4
+}
+```
+
+### Example response
+```json
+{
+  "anomaly_score": 0.91,
+  "label": "anomaly"
+}
+```
+
+## Docker
+```bash
+docker build -t anomaly-detector .
+docker run -p 8000:8000 anomaly-detector
+```
+
+## 📈 Monitoring (Optional)
+Export metrics from api.py using Prometheus client. Then:
+  - Connect Prometheus to the /metrics endpoint
+  - Visualize request counts and latencies in Grafana
+
+## 🛡 Security Considerations
+  - Input validation using pydantic
+  - Rate-limiting and IP whitelisting ready to integrate
+  - Ideal for secure SOC toolchains
+
+## 📖 License 
+  - MIT License
+
+## 🤝 Acknowledgments 
+  - CICIDS 2017 Dataset (Canadian Institute for Cybersecurity)
+  - scikit-learn, FastAPI, Docker, MLflow teams
