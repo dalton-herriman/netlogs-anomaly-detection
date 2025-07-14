@@ -30,8 +30,8 @@ def predict(log: LogEntry):
     df = pd.DataFrame([log.dict()])
 
     # Preprocess: scale inputs (temporary scaler fit — replace w/ saved if needed)
-    scaler = StandardScaler()
-    df_scaled = pd.DataFrame(scaler.fit_transform(df), columns=df.columns)
+    scaler = joblib.load("models/scaler.joblib")
+    df_scaled = pd.DataFrame(scaler.transform(df), columns=df.columns)
 
     # Predict
     prediction = model.predict(df_scaled)[0]
