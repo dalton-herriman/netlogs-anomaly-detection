@@ -135,7 +135,7 @@ Export metrics from api.py using Prometheus client. Then:
   - scikit-learn, FastAPI, Docker, MLflow teams
 
 ## TODO
-  1. Error handling in```python api.py ```
+  1. Error handling in api.py
   2. Log Requests and Predictions
-  3. Add ```bash .env``` and config loader
+  3. Add .env and config loader
   4. /batch_predict endpoint
