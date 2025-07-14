@@ -29,19 +29,20 @@ Detect suspicious or anomalous network activity using machine learning. This pro
 ---
 
 ## 📂 Project Structure
+```plaintext
 anomaly-detector/
-├── data/ # pre-processed datasets
-├── notebooks/ 
+├── data/                 # pre-processed datasets
+├── notebooks/            # Jupyter notebooks for EDA and training
 ├── src/
-│ ├── preprocess.py 
-│ ├── train.py 
-│ ├── inference.py 
-│ └── api.py 
-├── Dockerfile
-├── requirements.txt
-├── .env.example
-└── README.md
-
+│   ├── preprocess.py     # Log parsing and feature extraction
+│   ├── train.py          # Model training and evaluation
+│   ├── inference.py      # Core prediction logic
+│   └── api.py            # FastAPI app for serving predictions
+├── Dockerfile            # Container build configuration
+├── requirements.txt      # Python dependencies
+├── .env.example          # Environment variable template
+└── README.md             # Project documentation
+```
 ## 🧪 Model Training
 
 1. Download the [CICIDS 2017 dataset](https://www.unb.ca/cic/datasets/ids-2017.html)
