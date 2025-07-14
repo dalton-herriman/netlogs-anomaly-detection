@@ -133,3 +133,9 @@ Export metrics from api.py using Prometheus client. Then:
 ## 🤝 Acknowledgments 
   - CICIDS 2017 Dataset (Canadian Institute for Cybersecurity)
   - scikit-learn, FastAPI, Docker, MLflow teams
+
+## TODO
+  1. Error handling in```python api.py ```
+  2. Log Requests and Predictions
+  3. Add ```bash .env``` and config loader
+  4. /batch_predict endpoint
