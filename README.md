@@ -48,16 +48,18 @@ anomaly-detector/
 
 ## 🧪 Model Training
 
-1. Download the [CICIDS 2017 dataset](https://www.unb.ca/cic/datasets/ids-2017.html)
-2. Extract features:
-
-```bash
-python src/preprocess.py --input data/raw/ --output data/processed/
-```
-3. Train the model:
+1. Download the [CICIDS 2017 dataset](https://www.unb.ca/cic/datasets/ids-2017.html) (registration required)
+2. Preprocess Logs
+   2.1. Place your raw CSVs in data/raw/, then run:
+   ```bash
+    python src/preprocess.py --input data/raw/ --output data/processed/
+   ```
+3. Train the model
 ```bash
 python src/train.py --input data/processed/
 ```
+
+---
 
 ## 🌐 Inference API
 Start the API server:
