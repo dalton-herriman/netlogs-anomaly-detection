@@ -43,6 +43,9 @@ anomaly-detector/
 ├── .env.example          # Environment variable template
 └── README.md             # Project documentation
 ```
+
+---
+
 ## 🧪 Model Training
 
 1. Download the [CICIDS 2017 dataset](https://www.unb.ca/cic/datasets/ids-2017.html)
@@ -61,6 +64,28 @@ Start the API server:
 ```bash
 uvicorn src.api:app --host 0.0.0.0 --port 8000
 ```
+
+---
+
+### 📥 Dataset Instructions
+
+This project uses the CICIDS 2017 dataset from the Canadian Institute for Cybersecurity.
+
+Download link: https://www.unb.ca/cic/datasets/ids-2017.html  
+You must register to access the data.
+
+Once downloaded, place the appropriate CSV file (e.g., `Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv`) in: data/raw/
+
+Then run the preprocessing step:
+```bash
+python src/preprocess.py --input data/raw/filename.csv --output data/processed/clean.csv
+```
+
+---
+
+### ✅ Optional: Upload Small Samples
+You *can* include a **sample CSV (few rows)** for demo/testing purposes in a `sample_data/` folder if needed.
+---
 
 ### Example Request
 ```json

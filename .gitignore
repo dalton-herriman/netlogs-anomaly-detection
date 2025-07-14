@@ -1,0 +1,51 @@
+# =============================
+# 📁 DATA FILES
+# =============================
+# Ignore raw and processed datasets
+data/raw/*
+!data/raw/.gitkeep
+
+data/processed/*
+!data/processed/.gitkeep
+
+# =============================
+# 📦 VIRTUAL ENVIRONMENTS
+# =============================
+venv/
+.env/
+.env.example
+env/
+.venv/
+
+# =============================
+# 🐍 PYTHON COMPILED FILES
+# =============================
+__pycache__/
+*.py[cod]
+*.pyo
+
+# =============================
+# 📓 JUPYTER NOTEBOOKS
+# =============================
+.ipynb_checkpoints/
+
+# =============================
+# 🧪 MODEL ARTIFACTS
+# =============================
+models/
+*.joblib
+*.pkl
+
+# =============================
+# 🧾 LOG FILES
+# =============================
+logs/
+*.log
+
+# =============================
+# ⚙️ SYSTEM / MISC FILES
+# =============================
+.DS_Store
+*.tmp
+*.swp
+*.bak
