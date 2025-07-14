@@ -6,15 +6,24 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.model_selection import train_test_split
 
 
-def preprocess_data(input_path, output_paths):
+def preprocess_data(input_path, output_path):
     # Load raw CSV logs
     print(f"[INFO] Loading raw data from {input_path}")
     df = pd.read_csv(input_path)
+
+    # Clean column names
+    df.columns = df.columns.str.strip()
+    
     # Drop irrelevant columns
     df = df.drop(columns=["Flow ID", "Timestamp"], errors="ignore")
 
     # Handle missing values
     df = df.fillna(0)
+
+    # Convert infinite values to zero
+    # This is a common preprocessing step to avoid issues with infinite values
+    df.replace([float('inf'), float('-inf')], 0, inplace=True)
+
 
     # Encode categorical features
     for col in df.select_dtypes(include="object").columns:
@@ -49,4 +58,4 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    preprocess(args.input, args.output)
+    preprocess_data(args.input, args.output)
